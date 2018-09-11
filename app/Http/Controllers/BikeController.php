@@ -8,6 +8,15 @@ use App\Http\Resources\Bike as BikeResource;
 
 class BikeController extends Controller
 {
+    public function nearby(Request $request)
+    {
+      $latitude = $request->input('latitude');
+      $longitude = $request->input('longitude');
+      $radius = $request->input('radius');
+      $nearby_bikes = Bike::nearby($latitude, $longitude, $radius)->get();
+      return BikeResource::collection($nearby_bikes);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +24,6 @@ class BikeController extends Controller
      */
     public function index()
     {
-        //return Bike::all();
         return BikeResource::collection(Bike::all());
     }
 

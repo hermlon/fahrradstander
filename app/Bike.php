@@ -12,6 +12,6 @@ class Bike extends Model
       return $query->whereRaw('ST_Distance_Sphere(
             point(longitude, latitude),
             point(?, ?)
-            ) < radius', [$longitude, $latitude, $radius]);
+            ) < ?', [$longitude, $latitude, $radius]);
     }
 }
