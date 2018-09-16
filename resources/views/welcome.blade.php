@@ -91,6 +91,14 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
+              <ul>
+                <li><a href="api/bikes">api/bikes</a></li>
+                <li><a href="api/bikes/3">api/bikes/3</a></li>
+                <li><a href="api/bikes/nearby?latitude=51.604301&longitude=11.2&radius=50000">api/bikes/nearby?latitude=51.604301&longitude=11.2&radius=50000</a></li>
+              </ul>
+            <div>
+
+            </div>
         </div>
     </body>
 </html>
