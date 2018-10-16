@@ -17,6 +17,11 @@ class BikeController extends Controller
       return BikeResource::collection($nearby_bikes);
     }
 
+    public function inbox(Request $request)
+    {
+    
+    }
+
     /**
      * Display a listing of the resource.
      *

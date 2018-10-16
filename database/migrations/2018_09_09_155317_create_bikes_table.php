@@ -15,10 +15,13 @@ class CreateBikesTable extends Migration
     {
         Schema::create('bikes', function (Blueprint $table) {
             $table->increments('id');
-            // $table->integer('user_id');
-            $table->decimal('latitude', 8, 6);
-            $table->decimal('longitude', 9, 6);
-            $table->string('notes');
+            // remove and switch to location update etc.
+            //$table->decimal('latitude', 8, 6);
+            //$table->decimal('longitude', 9, 6);
+            //$table->string('notes');
+            // RSA Key Pair
+            $table->text('private_key')->nullable();
+            $table->text('public_key')->nullable();
             $table->timestamps();
         });
     }

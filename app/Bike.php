@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Observers\BikeCreating;
 
 class Bike extends Model
 {
@@ -14,4 +15,8 @@ class Bike extends Model
             point(?, ?)
             ) < ?', [$longitude, $latitude, $radius]);
     }
+
+    protected $dispatchesEvents = [
+        'creating' => BikeCreating::class,
+    ];
 }
