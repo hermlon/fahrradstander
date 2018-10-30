@@ -19,10 +19,7 @@ class BikeController extends Controller
 
     public function inbox(Bike $bike)
     {
-      /*
-      $bike_resource = new BikeResource($bike);
-      //dd($bike_resource->toArray(request()));
-      return $bike_resource;*/
+      return new BikeResource($bike);
     }
 
     /**
