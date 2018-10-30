@@ -17,9 +17,12 @@ class BikeController extends Controller
       return BikeResource::collection($nearby_bikes);
     }
 
-    public function inbox(Request $request)
+    public function inbox(Bike $bike)
     {
-    
+      /*
+      $bike_resource = new BikeResource($bike);
+      //dd($bike_resource->toArray(request()));
+      return $bike_resource;*/
     }
 
     /**

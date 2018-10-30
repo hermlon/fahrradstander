@@ -15,7 +15,7 @@ class Bike extends JsonResource
     public function toArray($request)
     {
         return [
-          '@context' => ["https://www.w3.org/ns/activitystreams", "https://w3id.org/security/v1"],
+          '@context' => ['https://www.w3.org/ns/activitystreams', 'https://w3id.org/security/v1'],
           'id' => action('BikeController@show', ['bike' => $this]),
           'type' => 'Service',
           'preferredUsername' => 'fahrrad-user-name',

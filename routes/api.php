@@ -17,6 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('bikes/{id}/inbox', 'BikeController@inbox');
+Route::get('bikes/{bike}/inbox', 'BikeController@inbox');
 Route::get('bikes/nearby', 'BikeController@nearby');
 Route::resource('bikes', 'BikeController');
