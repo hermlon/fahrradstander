@@ -31,7 +31,6 @@ class Webfinger extends JsonResource
     {
       $host = parse_url(config('app.url'), PHP_URL_HOST);
       $username = $this->id;
-
       return 'acct:'.$username.'@'.$host;
     }
 }

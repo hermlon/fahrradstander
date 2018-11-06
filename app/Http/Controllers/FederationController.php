@@ -12,6 +12,7 @@ class FederationController extends Controller
 {
     public function webfinger(Request $request)
     {
+      dd('success');
       $this->validate($request, ['resource'=>'required|string|min:3|max:255']);
 
       $resource = $request->input('resource');
