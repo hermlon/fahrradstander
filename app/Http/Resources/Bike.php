@@ -18,6 +18,7 @@ class Bike extends JsonResource
           '@context' => ['https://www.w3.org/ns/activitystreams', 'https://w3id.org/security/v1'],
           'id' => action('BikeController@show', ['bike' => $this]),
           'type' => 'Service',
+          'summary' => 'Testbeschreibung',
           'preferredUsername' => 'fahrrad-user-name',
           'inbox' => action('BikeController@inbox', ['bike' => $this]),
           'publicKey' => [
