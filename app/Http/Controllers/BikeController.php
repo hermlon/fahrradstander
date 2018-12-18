@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bike;
 use Illuminate\Http\Request;
-use App\Http\Resources\Bike as BikeResource;
+use App\Http\Resources\BikeLocation as BikeLocationResource;
 
 class BikeController extends Controller
 {
@@ -14,12 +14,12 @@ class BikeController extends Controller
       $longitude = $request->input('longitude');
       $radius = $request->input('radius');
       $nearby_bikes = Bike::nearby($latitude, $longitude, $radius)->get();
-      return BikeResource::collection($nearby_bikes);
+      return BikeLocationResource::collection($nearby_bikes);
     }
 
     public function inbox(Bike $bike)
     {
-      return new BikeResource($bike);
+      return new BikeLocationResource($bike);
     }
 
     /**
@@ -29,7 +29,7 @@ class BikeController extends Controller
      */
     public function index()
     {
-        return BikeResource::collection(Bike::all());
+        return BikeLocationResource::collection(Bike::all());
     }
 
     /**
@@ -61,7 +61,7 @@ class BikeController extends Controller
      */
     public function show(Bike $bike)
     {
-        return new BikeResource($bike);
+        return new BikeLocationResource($bike);
     }
 
     /**
