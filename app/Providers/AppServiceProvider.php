@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Resource::withoutWrapping();
+        // Resource::withoutWrapping();
         Bike::observe(BikeCreating::class);
     }
 
