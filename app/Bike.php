@@ -28,12 +28,13 @@ class Bike extends Model
       });
     }
 
+    /* returns all Bike whose latest location is between top left corner ($latNorth, $lonEast) and bottom right corner ($latSouth, $lonWest) */
     public function scopeBounding($query, $latNorth, $lonEast, $latSouth, $lonWest)
     {
-      return $query->whereHas('locations', function ($q) use($latNorth, $lonEast, $latSouth, $lonWest){
+      return $query->whereHas('locations', function ($q) use($latNorth, $lonEast, $latSouth, $lonWest) {
         $q->whereRaw('`locations`.`id` = (select `locations`.`id` from `locations` where `bikes`.`id` = `locations`.`bike_id` order by `created_at` desc limit 1)')
-        ->whereBetween('latitude', [$latSouth, $latNorth])
-        ->whereBetween('longitude', [$lonWest, $lonEast]);
+          ->whereBetween('latitude', [$latSouth, $latNorth])
+          ->whereBetween('longitude', [$lonWest, $lonEast]);
       });
     }
 
