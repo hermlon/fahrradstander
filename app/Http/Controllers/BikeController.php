@@ -17,6 +17,23 @@ class BikeController extends Controller
       return BikeLocationResource::collection($nearby_bikes);
     }
 
+    public function bounding(Request $request)
+    {
+      request()->validate([
+        'lat_north' => 'required|numeric',
+        'lon_east' => 'required|numeric',
+        'lat_south' => 'required|numeric',
+        'lon_west' => 'required|numeric',
+      ]);
+      $latNorth = request('lat_north');
+      $lonEast = request('lon_east');
+      $latSouth = request('lat_south');
+      $lonWest = request('lon_west');
+
+      $bounding_bikes = Bike::bounding($latNorth, $lonEast, $latSouth, $lonWest)->get();
+      return BikeLocationResource::collection($bounding_bikes);
+    }
+
     public function inbox(Bike $bike)
     {
       return new BikeLocationResource($bike);

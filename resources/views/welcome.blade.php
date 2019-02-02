@@ -95,6 +95,7 @@
                 <li><a href="api/bikes">api/bikes</a></li>
                 <li><a href="api/bikes/3">api/bikes/3</a></li>
                 <li><a href="api/bikes/nearby?latitude=51.604301&longitude=11.2&radius=50000">api/bikes/nearby?latitude=51.604301&longitude=11.2&radius=50000</a></li>
+                <li><a href="api/bikes/bounding?lat_north=51.0&lon_west=10&lat_south=52&lon_east=11">api/bikes/bounding?lat_north=51.0&lon_west=10&lat_south=52&lon_east=11</a></li>
               </ul>
             <div>
 

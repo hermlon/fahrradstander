@@ -11,7 +11,7 @@ class BikesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Bike::class, 10)->create()->each(function ($bike) {
+        factory(App\Bike::class, 100)->create()->each(function ($bike) {
           factory(App\Location::class, 4)->create(['bike_id' => $bike->id]);
         });
     }
